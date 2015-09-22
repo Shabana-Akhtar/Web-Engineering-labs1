@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>Index</title>
+<style>
+#header{
+	display: block;
+	background-color: black;
+	border:1px solid grey; 
+	padding:3px;
+	color : white;
+}
+#form{
+	margin:30px;
+}
+div.img {
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid #0000ff;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+	display:inline;
+}	
+</style>
+
+</head>
+<body>
+
+<div id="header">
+	<h1>Responsive Image Browser</h1>
+</div>
+
+
+<div class="tab">
+<a href="#link1"><img src="caption1.jpg" width="110" height="90"></a>
+<a href="#link2"><img src="caption2.jpg" width="110" height="90"></a>
+<a href="#link3"><img src="caption3.jpg" width="110" height="90"></a>
+<a href="#link4"><img src="caption4.jpg" width="110" height="90"></a>
+
+<style>
+#road {
+	margin:30px;
+    background-image: url('caption1.jpg');
+    height: 681px;
+    width: 1024px;
+  }
+ 
+  /* small image for mobile */
+  @media (min-width: 0px) {
+    #road {
+      background-image: url('caption1.jpg');
+      height: 213px;
+      width: 320px;
+    }
+  }
+ 
+  /* medium image for tablets */
+  @media (min-width: 640px) {
+    #road {
+      background-image: url('caption1.jpg');
+      height: 426px;
+      width: 640px;
+    }
+  }
+ 
+  /* large image for desktop */
+  @media (min-width: 1024px) {
+    #road {
+      background-image: url('caption1.jpg');
+      height: 681px;
+      width: 1024px;
+    }
+.tab div:target{
+	display:block;
+	}
+</style>
+ <div id="link1"><div id="road"></div></div>
+
+ <style>
+#road {
+	margin:30px;
+    background-image: url('caption2.jpg');
+    height: 681px;
+    width: 1024px;
+  }
+ 
+  /* small image for mobile */
+  @media (min-width: 0px) {
+    #road {
+      background-image: url('caption2.jpg');
+      height: 213px;
+      width: 320px;
+    }
+  }
+ 
+  /* medium image for tablets */
+  @media (min-width: 640px) {
+    #road {
+      background-image: url('caption2.jpg');
+      height: 426px;
+      width: 640px;
+    }
+  }
+ 
+  /* large image for desktop */
+  @media (min-width: 1024px) {
+    #road {
+      background-image: url('caption2.jpg');
+      height: 681px;
+      width: 1024px;
+    }
+.tab div:target{
+	display:block;
+	}
+</style>
+
+ <div class="img">
+  <div id="link2"><div id="road"></div></div>
+ </div>
+ 
+ <style>
+#road {
+	margin:30px;
+    background-image: url('caption3.jpg');
+    height: 681px;
+    width: 1024px;
+  }
+ 
+  /* small image for mobile */
+  @media (min-width: 0px) {
+    #road {
+      background-image: url('caption3.jpg');
+      height: 213px;
+      width: 320px;
+    }
+  }
+ 
+  /* medium image for tablets */
+  @media (min-width: 640px) {
+    #road {
+      background-image: url('caption3.jpg');
+      height: 426px;
+      width: 640px;
+    }
+  }
+ 
+  /* large image for desktop */
+  @media (min-width: 1024px) {
+    #road {
+      background-image: url('caption3.jpg');
+      height: 681px;
+      width: 1024px;
+    }
+.tab div:target{
+	display:block;
+	}
+</style>
+
+ <div class="img">
+  <div id="link3"><div id="road"></div></div>
+</div>
+
+ <style>
+#road {
+	margin:30px;
+    background-image: url('caption4.jpg');
+    height: 681px;
+    width: 1024px;
+  }
+ 
+  /* small image for mobile */
+  @media (min-width: 0px) {
+    #road {
+      background-image: url('caption4.jpg');
+      height: 213px;
+      width: 320px;
+    }
+  }
+ 
+  /* medium image for tablets */
+  @media (min-width: 640px) {
+    #road {
+      background-image: url('caption4.jpg');
+      height: 426px;
+      width: 640px;
+    }
+  }
+ 
+  /* large image for desktop */
+  @media (min-width: 1024px) {
+    #road {
+      background-image: url('caption4.jpg');
+      height: 681px;
+      width: 1024px;
+    }
+.tab div:target{
+	display:block;
+	}
+</style>
+
+<div class="img">
+  <div id="link4"><div id="road"></div></div>
+</div>
+
+</div>
+
+</body>
+</html>
