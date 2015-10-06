@@ -1,0 +1,82 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+
+#background{ 
+    background-image: url('gamebackground.jpg');
+	background-size:cover;
+	background-position: 0px 0px;
+	background-repeat: repeat;
+	height:600px;
+	animation: animatedBackground 40s linear infinite;
+}
+#obstacle1{ 
+	animation: animatedBackground1 2s linear infinite;
+	}
+#obstacle2{ 
+	animation: animatedBackground1 2s linear infinite;
+}
+#obstacle3{ 
+	animation: animatedBackground1 2s linear infinite;
+}
+@-webkit-keyframes animatedbackground {
+      from {background-position: 0 0;}
+      to {background-position: 100% 0;}
+}
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }	
+}
+@-webkit-keyframes animatedbackground1 {
+	from { right: 0%; }
+	to { right: 100%; }
+}
+@keyframes animatedBackground1 {
+	from { right: 0%; }
+	to { right: 100%; }
+	
+}
+</style>
+  <script type="text/javascript">
+
+	function myFunction(event) {
+		var x = event.keyCode;
+		if (x == 38) {  
+           document.getElementById('plane').style.top = parseInt(document.getElementById('plane').style.top) - 5 + "px";
+		}
+		else if(x==40){
+           document.getElementById('plane').style.top = parseInt(document.getElementById('plane').style.top) + 5 + "px";
+		}
+		
+	}
+
+	function docReady() {
+		document.getElementById('plane').style.top ='200px';
+		window.addEventListener('keydown', myFunction);
+	}
+  </script>
+<title>Lab4</title>
+</head>
+
+<body >
+<div id="background" >
+<img id="plane" src="images.jpg" style="width: 100px; position: absolute; left: 50px;" onload="docReady()"/>
+ <div id="obstacle1">
+  <img src="download.jpg" style="width: 80px; height: 80px; position: absolute; left: 1000px; top: 50px;"/>
+ </div>
+ <div id="obstacle2">
+  <img src="download.jpg" style="width: 80px; height: 80px; position: absolute; left: 600px; top: 150px;"/>
+ </div>
+  <div id="obstacle2">
+  <img src="download.jpg" style="width: 80px; height: 80px; position: absolute; left: 800px; top: 400px;"/>
+ </div>
+</div>
+
+<!--input name="" onkeydown="ani()" /-->
+<!-- <input type="button" onkeydown="myFunction(event)"> --> 
+
+</body>
+</html>
