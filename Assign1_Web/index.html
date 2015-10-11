@@ -1,0 +1,558 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Assignment 1</title>
+<style type="text/css">
+.tab div {
+    display: none;
+}
+.tab div:target {
+    display: block;
+}
+#h1{
+	color: black;
+}
+h2{
+	color: #F0F0F0;
+	background-color: #F0F0F0;
+}
+ input{
+    color:#000000;float:left;
+    font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    font-size:70%;
+    padding:14px;
+    background:url(overlay.png) repeat-x center #ffcc00;
+    background-color:#F0F0F0;
+    border:1px solid #ffffff;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    border-bottom:1px solid #9f9f9f;
+    -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+    -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+    cursor:pointer;
+	margin-left: 20px;
+}
+input:hover{
+    background-color:#ffffff;
+}
+#A {
+    width: 600px;
+    height: 600px;
+    background: url(spritesheet.png) -5px -5px;
+
+}
+#B {
+    width: 400px;
+    height: 400px;
+    background: url(spritesheet.png) -615px -5px;
+
+}
+#C {
+    width: 350px;
+    height: 370px;
+    background: url(spritesheet.png) -1025px -5px;
+
+}
+#D {
+    width: 450px;
+    height: 470px;
+    background: url(spritesheet.png) -1025px -385px;
+
+}
+#E {
+    width: 225px;
+    height: 225px;
+    background: url(spritesheet.png) -5px -865px;
+
+}
+#F {
+    width: 400px;
+    height: 400px;
+    background: url(spritesheet.png) -240px -865px;
+
+}
+#G {
+    width: 450px;
+    height: 450px;
+    background: url(spritesheet.png) -650px -865px;
+ 
+}
+#H {
+    width: 218px;
+    height: 231px;
+    background: url(spritesheet.png) -1110px -865px;
+
+}
+
+#I {
+    width: 400px;
+    height: 400px;
+    background: url(spritesheet.png) -1110px -1106px;
+
+}
+
+#J {
+    width: 400px;
+    height: 400px;
+    background: url(spritesheet.png) -1485px -5px;
+
+}
+
+#K {
+    width: 450px;
+    height: 450px;
+    background: url(spritesheet.png) -1485px -415px;
+
+}
+
+#L {
+    width: 400px;
+    height: 400px;
+    background: url(spritesheet.png) -615px -415px;
+
+}
+
+#M {
+    width: 500px;
+    height: 500px;
+    background: url(spritesheet.png) -1945px -5px;
+
+}
+#N {
+    width: 450px;
+    height: 450px;
+    background: url(spritesheet1.png) -5px -5px;
+
+}
+
+#O {
+    width: 450px;
+    height: 470px;
+    background: url(spritesheet1.png) -465px -5px;
+
+}
+
+#P {
+    width: 450px;
+    height: 470px;
+    background: url(spritesheet1.png) -925px -5px;
+
+}
+
+#Q {
+    width: 225px;
+    height: 225px;
+    background: url(spritesheet1.png) -1385px -5px;
+
+}
+
+#R {
+    width: 450px;
+    height: 470px;
+    background: url(spritesheet1.png) -5px -485px;
+
+}
+
+#S {
+    width: 600px;
+    height: 600px;
+    background: url(spritesheet1.png) -465px -485px;
+
+}
+
+#T {
+    width: 500px;
+    height: 500px;
+    background: url(spritesheet1.png) -1075px -485px;
+
+}
+
+#U {
+    width: 400px;
+    height: 400px;
+    background: url(spritesheet1.png) -5px -995px;
+
+}
+
+#V {
+    width: 600px;
+    height: 600px;
+    background: url(spritesheet1.png) -1075px -995px;
+
+}
+
+#W {
+    width: 450px;
+    height: 450px;
+    background: url(spritesheet1.png) -1620px -5px;
+
+}
+
+#X {
+    width: 450px;
+    height: 450px;
+    background: url(spritesheet1.png) -1585px -465px;
+
+}
+
+#Y {
+    width: 225px;
+    height: 225px;
+    background: url(spritesheet1.png) -1685px -925px;
+
+}
+
+#Z {
+    width: 500px;
+    height: 500px;
+    background: url(spritesheet1.png) -5px -1605px;
+
+}
+
+#butterfly {
+    width: 575px;
+    height: 600px;
+    background: url(spritesheet2.png) -5px -5px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#news {
+    width: 360px;
+    height: 252px;
+    background: url(spritesheet2.png) -590px -5px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+	top: 40%;
+}
+
+#apple {
+    width: 300px;
+    height: 259px;
+    background: url(spritesheet2.png) -960px -5px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+	top: 50%;
+}
+
+#cat {
+    width: 300px;
+    height: 300px;
+    background: url(spritesheet2.png) -1270px -5px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+	top: 40%;
+}
+
+#duck {
+    width: 600px;
+    height: 579px;
+    background: url(spritesheet2.png) -1970px -5px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#elephant {
+    width: 300px;
+    height: 218px;
+    background: url(spritesheet2.png) -2580px -5px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+	top: 60%;
+}
+
+#fish {
+    width: 225px;
+    height: 225px;
+    background: url(spritesheet2.png) -2890px -5px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+	top: 40%
+}
+
+#giraffe {
+    width: 236px;
+    height: 236px;
+    background: url(spritesheet2.png) -2580px -240px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+	top: 40%;
+}
+
+#house {
+    width: 514px;
+    height: 430px;
+    background: url(spritesheet2.png) -590px -486px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#icecream {
+    width: 600px;
+    height: 561px;
+    background: url(spritesheet2.png) -1114px -486px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#jug {
+    width: 441px;
+    height: 439px;
+    background: url(spritesheet2.png) -2580px -486px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+}
+
+#kite {
+    width: 296px;
+    height: 300px;
+    background: url(spritesheet2.png) -5px -935px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+	top: 40%;
+}
+
+#lion {
+    width: 410px;
+    height: 259px;
+    background: url(spritesheet2.png) -311px -935px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+	top: 40%;
+}
+
+#monkey {
+    width: 400px;
+    height: 400px;
+    background: url(spritesheet2.png) -1724px -935px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+}
+
+#orange {
+    width: 442px;
+    height: 557px;
+    background: url(spritesheet2.png) -2134px -935px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+}
+
+#pencil {
+    width: 512px;
+    height: 512px;
+    background: url(spritesheet2.png) -2586px -935px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#queen {
+    width: 252px;
+    height: 298px;
+    background: url(spritesheet2.png) -731px -935px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+	top: 50%;
+}
+
+#rainbow {
+    width: 550px;
+    height: 286px;
+    background: url(spritesheet2.png) -5px -1457px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#sun {
+    width: 560px;
+    height: 560px;
+    background: url(spritesheet2.png) -5px -2373px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#tree {
+    width: 309px;
+    height: 422px;
+    background: url(spritesheet2.png) -575px -2373px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+}
+
+#umbrella {
+    width: 224px;
+    height: 224px;
+    background: url(spritesheet2.png) -894px -2373px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+	top: 40%;
+}
+
+#vegetable {
+    width: 384px;
+    height: 259px;
+    background: url(spritesheet2.png) -1128px -2373px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+}
+
+#watch {
+    width: 500px;
+    height: 258px;
+    background: url(spritesheet2.png) -1522px -2373px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#xylophone {
+    width: 471px;
+    height: 500px;
+    background: url(spritesheet2.png) -2032px -2373px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#yacht {
+    width: 491px;
+    height: 431px;
+    background: url(spritesheet2.png) -2513px -2373px;
+	display:block;
+	position: absolute;
+    left: 50%; 
+}
+
+#zebra {
+    width: 340px;
+    height: 314px;
+    background: url(spritesheet2.png) -3014px -2373px;
+	display:block;
+	position: absolute;
+    left: 60%; 
+}
+
+#Quiz{
+	
+}
+</style>
+</head>
+
+<body >
+<div id="h1" style="text-align:center; font-size: 50px;" ><img src="logo.png"/ height="100px" width="100px"> <b>Interactive alphabet learning web app</b>
+</div>
+<h2>border1</h2>
+<div class="tab">
+
+<a href="#A"><input type="Button" value="A"></a>
+<a href="#B"><input type="Button" value="B" ></a>
+<a href="#C"><input type="Button" value="C"></a>
+<a href="#D"><input type="Button" value="D"></a>
+<a href="#E"><input type="Button" value="E"></a>
+<a href="#F"><input type="Button" value="F"></a>
+<a href="#G"><input type="Button" value="G"></a>
+<a href="#H"><input type="Button" value="H"></a>
+<a href="#I"><input type="Button" value="I"></a>
+<a href="#J"><input type="Button" value="J"></a>
+<a href="#K"><input type="Button" value="K"></a>
+<a href="#L"><input type="Button" value="L" ></a>
+<a href="#M"><input type="Button" value="M"></a>
+<a href="#N"><input type="Button" value="N"></a>
+<a href="#O"><input type="Button" value="O"></a>
+<a href="#P"><input type="Button" value="P"></a>
+<a href="#Q"><input type="Button" value="Q"></a>
+<a href="#R"><input type="Button" value="R"></a>
+<a href="#S"><input type="Button" value="S"></a>
+<a href="#T"><input type="Button" value="T"></a>
+<a href="#U"><input type="Button" value="U"></a>
+<a href="#V"><input type="Button" value="V" ></a>
+<a href="#W"><input type="Button" value="W"></a>
+<a href="#X"><input type="Button" value="X"></a>
+<a href="#Y"><input type="Button" value="Y"></a>
+<a href="#Z"><input type="Button" value="Z"></a>
+
+<a href="q1.html"><input type="Button" value="Quiz"></a>
+
+
+</br></br></br></br>
+<div id="A"><div id="apple"></div></div>
+
+<div id="B"><div id="butterfly"></div></div>
+
+<div id="C"><div id="cat"></div></div>
+
+<div id="D"><div id="duck"></div></div>
+
+<div id="E"><div id="elephant"></div></div>
+
+<div id="F"><div id="fish"></div></div>
+
+<div id="G"><div id="giraffe"></div></div>
+
+<div id="H"><div id="house"></div></div>
+
+<div id="I"><div id="icecream"></div></div>
+
+<div id="J"><div id="jug"></div></div>
+
+<div id="K"><div id="kite"></div></div>
+
+<div id="L"><div id="lion"></div></div>
+
+<div id="M"><div id="monkey"></div></div>
+
+<div id="N"><div id="news"></div></div>
+
+<div id="O"><div id="orange"></div></div>
+
+<div id="P"><div id="pencil"></div></div>
+
+<div id="Q"><div id="queen"></div></div>
+
+<div id="R"><div id="rainbow"></div></div>
+
+<div id="S"><div id="sun"></div></div>
+
+<div id="T"><div id="tree"></div></div>
+
+<div id="U"><div id="umbrella"></div></div>
+
+<div id="V"><div id="vegetable"></div></div>
+
+<div id="W"><div id="watch"></div></div>
+
+<div id="X"><div id="xylophone"></div></div>
+
+<div id="Y"><div id="yacht"></div></div>
+
+<div id="Z"><div id="zebra"></div></div>
+
+</div>
+
+</body>
+</html>
