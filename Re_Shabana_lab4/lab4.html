@@ -1,0 +1,100 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+
+#background{ 
+    background-image: url('gamebackground.jpg');
+	background-size:cover;
+	background-repeat: repeat;
+	height:600px;
+	animation: animatedBackground linear 40s infinite;
+}
+#obstacle1{ 
+	animation: animatedBackground1 40s linear infinite;
+	}
+#obstacle2{ 
+	animation: animatedBackground1 2s linear infinite;
+}
+#obstacle3{ 
+	animation: animatedBackground1 2s linear infinite;
+}
+@-webkit-keyframes animatedbackground {
+      from {background-position: 0 0;}
+      to {background-position: 100% 0;}
+}
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }	
+}
+@-webkit-keyframes animatedbackground1 {
+	from { right: 0%; }
+	to { right: 100%; }
+}
+@keyframes animatedBackground1 {
+	from { right: 0%; }
+	to { right: 100%; }
+	
+}
+
+</style>
+  <script type="text/javascript">
+	var life=true;
+	function obst(){
+		var spongebob = document.createElement("img");
+		spongebob.setAttribute('src',"download.jpg");
+		spongebob.setAttribute('id',"spongebob");	
+		spongebob.setAttribute("style","max-width: 100px;position:absolute;left:1200px;top:" + Math.floor((Math.random()*450)+100) + "px;");		
+        document.body.appendChild(spongebob);
+
+		moveLeft(spongebob,2000);
+    }
+	function myFunction(event) {
+		var x = event.keyCode;
+		if (x == 38) {  
+           document.getElementById('plane').style.top = parseInt(document.getElementById('plane').style.top) - 5 + "px";
+		}
+		else if(x==40){
+           document.getElementById('plane').style.top = parseInt(document.getElementById('plane').style.top) + 5 + "px";
+		}
+		
+	}
+
+	function docReady() {
+		document.getElementById('plane').style.top ='200px';
+		window.addEventListener('keydown', myFunction);
+		window.setInterval(obst, 3000);
+	}
+	function collision(){
+	
+	}
+	
+	function moveLeft(image, numberOfTimes){
+		numberOfTimes--;
+		setTimeout(function(){
+        image.style.left = parseInt(image.style.left) -10 + 'px';
+		if (numberOfTimes>0){
+				moveLeft(image, numberOfTimes);
+			}
+		else{
+        image.parentNode.removeChild(image);			
+		}
+		}		
+		}, 50);
+
+    }
+  </script>
+  </script>
+<title>Lab4</title>
+</head>
+
+<body>
+
+<div id="background" >
+	<img id="plane" src="images.jpg" style="width: 100px; position: absolute; left: 50px;" onload="docReady()"/>
+</div>
+
+</body>
+</html>
