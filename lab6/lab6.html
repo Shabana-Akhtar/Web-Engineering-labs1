@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    width: 300px;
+    height: 90px;
+    overflow-y: scroll;
+	border: 1px dashed;
+}
+
+</style>
+</head>
+<body onload="loadDoc()">
+
+ 
+<script type="text/javascript">
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+		jsonDoc = JSON.parse(xhttp.responseText);
+		var ul = document.createElement("ul");
+		ul.setAttribute('id',"ul1");
+		
+		for (i=0;i< jsonDoc.length;i++){
+		 var li=document.createElement("li");
+		 li.innerHTML="<b>"+jsonDoc[i].color+"</b>"+" <span style='color:"+jsonDoc[i].value+"'>"+jsonDoc[i].value+"</span>";
+		 ul.appendChild(li);
+	}
+	document.body.appendChild(ul);
+	
+	var ul2=ul.cloneNode(true);
+	document.body.appendChild(ul2);
+	ul2.scrollTo(0,ul2.scrollHeight);
+	
+	
+    }
+  }
+  xhttp.open("GET", "ColorNameMap.json", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
