@@ -1,0 +1,78 @@
+<html>
+<head> 
+<title>Dynamic Form Builder</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#optionsDiv").hide();
+	});
+	function myFunc(){
+		var x=prompt("Enter name of form");
+		document.getElementById('registration').innerHTML=x;
+		$(document).ready(function(){
+           $("#optionsDiv").show();
+    });
+	};
+	
+	function formBuilder(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var l=document.createElement("label");
+		var a=prompt("Enter label:");
+		l.setAttribute('for',"label");
+		l.innerHTML=a;
+		var i = document.createElement("input"); //input element, text
+
+		i.setAttribute('type',"text");
+		i.setAttribute('name',"username");	
+		f.appendChild(l);
+		f.appendChild(i);
+		
+	}
+	
+		function formBuilder1(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var l=document.createElement("label");
+		var a=prompt("Enter label:");
+		l.setAttribute('for',"label");
+		l.innerHTML=a;
+		var i = document.createElement("input"); //input element, text
+
+		i.setAttribute('type',"password");
+		i.setAttribute('name',"password");	
+		f.appendChild(l);
+		f.appendChild(i);
+
+	}
+
+		/*var i=document.createElement('');
+
+
+
+    
+	$("textarea").formBuilder(){
+	
+	}*/
+</script>
+</head>
+<body>
+<div id="DynamicForm">
+  <a href="#" onClick="myFunc()">Create Form</a>
+</div>
+<h1><div id="registration"></h1></div>
+<div id="optionsDiv" padding="3px">
+	<div id="options">
+		<button id="text" onclick="formBuilder()">Text Input</button>
+		<button id="password" onclick="formBuilder1()">Password Input</button>
+	</div>
+	<div id ="myFormDiv">
+		<form id="myForm" action="#">
+		</form>
+		<form id="myForm1" action="#" >
+			<input type="Submit"/>
+		</form>
+	</div>
+</div>
+</body>
+</html>
