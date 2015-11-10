@@ -1,0 +1,267 @@
+<html>
+<head> 
+<title>Dynamic Form Builder</title>
+<style>
+	
+	h1{
+	color:#c0392b;
+	}
+
+	input {
+    border-radius: 5px;
+    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+		var json;
+    $(document).ready(function(){
+        $("#optionsDiv").hide();
+	});
+	
+	
+	function myFunc(){
+		var x=prompt("Enter name of form");
+		document.getElementById('registration').innerHTML=x;
+		$(document).ready(function(){
+           $("#optionsDiv").show();
+    });
+	};
+	
+	function formBuilder(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var l=document.createElement("label");
+		var a=prompt("Enter label:");
+		
+		var required=prompt("required or not: y/n");
+		
+		var i = document.createElement("input"); 
+		
+		if(required=='y'||required=='Y'){i.setAttribute('required','true');} 
+		
+		var b=prompt("Enter Value:");
+		l.setAttribute('for',"label");
+		l.innerHTML=a;
+		
+		i.setAttribute('type',"text");
+		i.setAttribute('name',a);
+		
+		f.appendChild(l);
+		f.appendChild(i);
+		
+		json+='{"element":"input", "type":"text","name":"'+a+'","value":"'+b+'"},';
+	
+	}
+	
+		function formBuilder1(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var l=document.createElement("label");
+		var a=prompt("Enter label:");
+		l.setAttribute('for',"label");
+		l.innerHTML=a;
+		var i = document.createElement("input"); 
+		
+		var required=prompt("required or not: y/n");
+		if(required=='y'||required=='Y'){i.setAttribute('required','true');} 
+		
+		i.setAttribute('type',"password");
+		i.setAttribute('name',a);	
+		var b=i.value;
+		f.appendChild(l);
+		f.appendChild(i);
+		
+		json+='{"element":"input", "type":"password","name":"'+a+'","value":"'+b+'"},';
+	}
+			function formBuilder2(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var l=document.createElement("label");
+		var a=prompt("Enter label:");
+		l.setAttribute('for',"label");
+		l.innerHTML=a;
+		var i = document.createElement("input"); 
+		
+		i.setAttribute('type',"number");
+		i.setAttribute('name',a);	
+		var b=i.value;
+		f.appendChild(l);
+		f.appendChild(i);
+		
+		json+='{"element":"input", "type":"number","name":"'+name+'","value":"'+b+'"},';
+	}
+			function formBuilder3(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var l=document.createElement("label");
+		var a=prompt("Enter label:");
+		l.setAttribute('for',"label");
+		l.innerHTML=a;
+		var i = document.createElement("input"); 
+
+		i.setAttribute('type',"radio");
+		i.setAttribute('name',a);	
+		var b=i.value;
+		f.appendChild(l);
+		f.appendChild(i);
+		
+		json+='{"element":"input", "type":"radio","name":"'+name+'","value":"'+b+'"},';
+	}
+			function formBuilder4(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var l=document.createElement("label");
+		var a=prompt("Enter label:");
+		l.setAttribute('for',"label");
+		l.innerHTML=a;
+		var i = document.createElement("input"); 
+
+		i.setAttribute('type',"checkbox");
+		i.setAttribute('name',a);	
+		var b=i.value;
+		f.appendChild(l);
+		f.appendChild(i);
+		
+		json+='{"element":"input", "type":"checkbox","name":"'+name+'","value":"'+b+'"},';
+	}
+			function formBuilder5(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var l=document.createElement("label");
+		var a=prompt("Enter label:");
+		l.setAttribute('for',"label");
+		l.innerHTML=a;
+		var i = document.createElement("input");
+
+		i.setAttribute('type',"file");
+		i.setAttribute('name',a);	
+		var b=i.value;
+		f.appendChild(l);
+		f.appendChild(i);
+		
+		json+='{"element":"input", "type":"file","name":"'+name+'","value":"'+b+'"},';
+	}
+			function formBuilder6(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var a=prompt("name of input will be:");
+		
+		var c=prompt("Max length of text area:");
+		i.setAttribute("maxlength",c);
+		
+		var b=prompt("value of input will be::");
+	
+		var i = document.createElement("textarea"); //input element, text
+		i.name=a;
+		i.value=b;	
+		
+		f.appendChild(i);
+		
+		json+='{"element":"input", "type":"textarea","name":"'+a+'","value":"'+b+'"},';
+	}
+			function formBuilder7(){
+		var btn;
+		var f=document.getElementById('myForm');
+		var l=document.createElement("label");
+		
+		var i = document.createElement("keygen"); //input element, text
+
+		i.name=l;
+		
+		f.appendChild(i);
+		
+		json+='{"element":"input", "type":"keygen","name":"'+l+'","value":""},';
+	}	
+				function formBuilder8(){
+		var btn;
+		var f=document.getElementById('myForm');
+		
+		var inp = document.createElement("select"); //input element, text
+        var a = prompt("Name of select element");
+        inp.name = a;
+		
+		json+='{"element":"select","name":"'+a+'" , "options":[';
+		
+        var count = prompt("Enter number of options");
+        
+        for(i=0;i<count;i++){
+            var option = document.createElement("option");
+            var value = prompt("Value of options");
+            var text = prompt("labels of options");
+            option.value= value;
+            option.text= text;
+            
+			json+='{"value":"'+option.value+'","text":"'+option.text+'"},';
+            inp.appendChild(option);
+        }
+		json+=']},';
+		f.appendChild(inp);
+		
+	}
+				function formBuilder9(){
+		var btn;
+		var f=document.getElementById('myForm');
+		
+		var i = document.createElement("datalist"); //input element, text
+        var name = prompt("Name of list elements");
+        i.name = name;
+		var value = prompt("Value of list");
+        i.value = value;
+		
+		json+='{"element":"datalist","name":"'+name+'" , "value":"'+value+'" , "options":[';
+		
+        var count = prompt("Enter number of list elements");
+        
+        for(i=0;i<count;i++){
+            var option = document.createElement("option");
+            var value = prompt("Number of options");
+            var text = prompt("labels of options");
+            option.value= value;
+            option.text= text;
+            
+			json+='{"value":"'+option.value+'","text":"'+option.text+'"},';
+            i.appendChild(option);
+        }
+		json+=']},';
+		f.appendChild(i);
+	}	
+
+function jsonFile(){
+    json = json.substring(0, json.length - 1);
+    json+="]}";
+    // Parse the serialized data back into an aray of objects
+    localStorage.setItem("json",json);
+	alert(localStorage.getItem(json));
+ 
+}
+</script>
+</head>
+<body>
+<div id="DynamicForm" padding="3px 3px 3px 3px">
+  <a href="#" onClick="myFunc()">Create Form</a>
+</div>
+<h1><div id="registration" padding="3px 3px 3px 3px"></h1></div>
+<div id="optionsDiv" padding="3px 3px 3px 3px">
+	<div id="options">
+		<button id="text" onclick="formBuilder()" style="padding: 5px 10px;">Create Text Input</button>
+		<button id="password" onclick="formBuilder1()" style="padding: 5px 10px;">Create Password Input</button>
+		<button id="number" onclick="formBuilder2()">Create Number Input</button>
+        <button id="radio" onclick="formBuilder3()">Create Radio</button>
+        <button id="checkBox"  onclick="formBuilder4()">Create Checkbox</button>
+        <button id="file"  onclick="formBuilder5()">Create File</button>
+        <button id="textArea" onclick="formBuilder6()">Create textArea</button>
+        <button id="keygen" onclick="formBuilder7()">Create Keygen</button>
+        <button id="select" onclick="formBuilder8()">Create Select</button>
+        <button id="datalist"  onclick="formBuilder9()">Create Datalist</button>
+	</div>
+	<div id ="myFormDiv">
+		<form id="myForm" action="#">
+			<input type="Submit" onclick="jsonFile()"/>
+		</form>
+	</div>
+</div>
+
+</body>
+</html>
