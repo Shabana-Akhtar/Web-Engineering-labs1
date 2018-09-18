@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Question 1</title>
+<style type="text/css">
+
+#apple {
+    width: 300px;
+    height: 259px;
+    background: url(spritesheet2.png) -960px -5px;
+	display:block;
+	position: absolute;
+    left: 30%; 
+	top: 20%;
+}
+
+.tab div {
+    display: none;
+}
+.tab div:target {
+    display: block;
+}
+</style>
+</head>
+
+<body >
+<h1 style="text-align:center;">Question 1</h1>
+<div id="apple"></div><br/>
+<a href="index.html"><input type="Button" value="Back to tutorial"></a>
+<a href="q2.html"><input type="Button" value="Next Question"></a>
+<h1 >First Letter is?</h1>
+<div class="tab">
+1- <a href="#right">A</a><br/>
+2- <a href="#wrong">B</a><br/>
+3- <a href="#wrong">C</a><br/>
+4- <a href="#wrong">D</a>
+
+<div id="right"><p><img src="yayy.jpg" height="150px" width="200px"/><br/><br/> Answer is Correct! </p></div>
+<div id="wrong"><p>Incorrect!<br/><img src="wrong.jpg"/></p></div>
+
+</div>
+</body>
+</html>
